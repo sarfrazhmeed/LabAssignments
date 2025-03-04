@@ -1,0 +1,24 @@
+package main;
+
+import banking.BankingSystem;
+import java.io.Console;
+
+public class BankApplication {
+    public static void main(String[] args) {
+        Console console = System.console();
+       
+        System.out.print("Enter Account Number: ");
+        String enteredAccount = console.readLine();
+
+        System.out.print("Enter PIN: ");
+        char[] enteredPinChars = console.readPassword();
+        String enteredPin = new String(enteredPinChars);
+
+        if (BankingSystem.authenticate(enteredAccount, enteredPin)) {
+            System.out.println("Access Granted! Viewing Account Details...\n You have Rs.10,000 in your bank account");
+            
+        } else {
+            System.out.println("Invalid Credentials. Access Denied.");
+        }
+    }
+}
