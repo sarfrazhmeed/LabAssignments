@@ -1,0 +1,23 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        Employee hod = new Employee("Saad Asghar", "Head of CS");
+        Employee professor1 = new Employee("Ali Zaib", "Professor");
+        Employee professor2 = new Employee("Prof.Shahid Bhatii", "Professor");
+
+        
+        SystemUnit pc1 = new SystemUnit("Core i9", "16GB", "256GB", 1, "Lenovo ThinkPad");
+        SystemUnit pc2 = new SystemUnit("Core i7", "8GB", "512GB", 2, "HP Pavilion");
+
+        Lab lab1 = new Lab("CS Lab-1", new Employee("Sian Jataoi", "Lab Attendant"), new SystemUnit[]{pc1, pc2}, true);
+
+       
+        Department csDept = new Department("Computer Science", hod, new Lab[]{lab1}, new Employee[]{professor1, professor2});
+
+        
+        Campus university = new Campus("COMSATS Lahore", new Department[]{csDept});
+
+        
+        System.out.println(university);
+    }
+}
